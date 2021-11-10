@@ -1,4 +1,4 @@
-# uniony ![Github Actions](https://github.com/tandy-1000/uniony/workflows/Github%20Actions/badge.svg)
+# uniony ![Github Actions](https://github.com/tandy-1000/uniony/actions/workflows/ci.yml/badge.svg)
 
 A [jsony](https://github.com/treeform/jsony/) plugin to enable [union](https://github.com/alaviss/union) support.
 

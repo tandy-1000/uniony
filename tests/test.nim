@@ -11,7 +11,7 @@ suite "Object with union field":
     var u = Val(num: 42 as union(int | string | float))
 
   test "Parse JSON":
-    let parsed = """{"val":{"num":42}}""".fromJson(Val)
+    let parsed = """{"num":42}""".fromJson(Val)
 
     check parsed == u
 

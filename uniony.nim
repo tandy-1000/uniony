@@ -65,9 +65,6 @@ proc parseHook*[T: Union](s: string, i: var int, v: var T) =
     # Add the block to the result.
     result.add blk
 
-    debugEcho repr result
-
-  debugEcho "parsing ", $typeof(v)
   parseHookAux(s, i, v)
 
 proc dumpHook*[T: Union](s: var string, v: T) =

@@ -1,4 +1,4 @@
-import std/[macros, genasts]
+import std/[macros, genasts, sugar, algorithm]
 import pkg/jsony
 import pkg/union
 import pkg/union/uniontraits
@@ -35,8 +35,19 @@ proc parseHook*[T: Union](s: string, i: var int, v: var T) =
       blkStmt = newStmtList()
       blk = nnkBlockStmt.newTree(copy(parser), blkStmt)
 
+    # Collect the types within union
+    var types = collect(newSeq):
+      for _, _, typ in union.variants:
+        typ
+
+    # Sort them based on their kinds, with more specific types on top
+    #
+    # This exploits the natural ordering of NimTypeKind.
+    types.sort do (x, y: NimNode) -> int:
+      cmp(x.typeKind, y.typeKind)
+
     # Construct parsing blocks for each type in union.
-    for _, _, typ in union.variants:
+    for typ in types.items:
       blkStmt.add:
         genAst(
           typ, # A type within union

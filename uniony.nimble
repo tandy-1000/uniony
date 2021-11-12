@@ -10,4 +10,4 @@ license       = "MIT"
 
 requires "nim >= 1.5.1"
 requires "https://github.com/treeform/jsony"
-requires "https://github.com/alaviss/union"
+requires "https://github.com/alaviss/union@^0.1.0"

@@ -7,4 +7,4 @@ A [jsony](https://github.com/treeform/jsony/) plugin to enable [union](https://g
 ---
 ### Why?
 
-To help create high level bindings for APIs built in TypeScript where type unions are used. I needed this in [listenbrainz-nim](https://gitlab.com/tandy1000/listenbrainz-nim/).
+To help create high level bindings for APIs where type unions need to be used. I needed this in [listenbrainz-nim](https://gitlab.com/tandy1000/listenbrainz-nim/).

@@ -1,7 +1,7 @@
-import std/[macros, genasts, sugar, algorithm]
-import pkg/jsony
-import pkg/union
-import pkg/union/uniontraits
+import
+  std/[macros, genasts, sugar, algorithm],
+  pkg/[jsony, union],
+  pkg/union/uniontraits
 
 proc parseHook*[T: Union](s: string, i: var int, v: var T) =
   macro parseHookAux[T: Union](s: string, i: var int, v: var T): untyped =
